@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Yacine's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Main container for both image and text */
+.main-container {
+    display: flex; /* Align image and text horizontally */
+    align-items: center; /* Vertically align the items */
+    justify-content: center; /* Center everything horizontally */
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 100vh; /* Ensure it takes up full height of the viewport */
+    gap: 20px; /* Space between the image and the text */
+}
+
+/* Image styling */
+.image {
+    display: flex; /* To make the image centered */
+    justify-content: center; /* Horizontally center image */
+    align-items: center; /* Vertically center image */
+}
+
+.image img {
+    width: 30vw; /* Adjust size relative to viewport width */
+    height: 30vw; /* Keep height equal to width for a circular shape */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensure the image covers the container */
+    transition: all 0.3s ease-in-out; /* Smooth transition for resize */
+    max-width: 25vw; /* Max width to control scaling */
+    max-height: 30vw; /* Max height to control scaling */
+}
+
+/* Ensure responsiveness for mobile */
+@media (max-width: 500px) {
+    .image img {
+        width: 15vw; /* Smaller size on mobile */
+        height: 15vw; /* Maintain the circular shape */
+        max-width: 15vw;
+        max-height: 15vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .image img {
+        width: 20vw; /* Even smaller for very small devices */
+        height: 20vw; /* Maintain circular shape */
+        max-width: 20vw;
+        max-height: 20vw;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Gherdaine Mohammed Yacine</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="blogs.html">Blogs</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact Us</a></div>
+            </div>
+            
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="services.html">Services</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+        
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="cv_img.jpg" alt="Yacine's Photo">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Yacine</span></h1>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">I'm Gherdaine Mohammed Yacine, an AI engineer with a master's degree in artificial intelligence and its applications. I'm passionate about coding, problem-solving, and developing impactful AI solutions. With a strong focus on computer vision and data analysis, I enjoy tackling complex challenges and expanding my knowledge. My goal is to grow as an AI engineer and contribute to innovative projects that push the boundaries of technology.</p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/MohaYass92" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://web.facebook.com/YacineGherdaine" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammed-yacine-gherdaine-2946aa224/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.researchgate.net/profile/Yacine-Gherdaine?ev=hdr_xprf" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <a href="path/to/your-cv.pdf" download><button>Download CV</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+    </script>
+</body>
+</html>
